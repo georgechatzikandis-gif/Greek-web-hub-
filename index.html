@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greek Web Hub — Web Designs</title>
+<meta name="description" content="Greek Web Hub — Μοντέρνοι ιστότοποι που δουλεύουν. Δες τις δουλειές μας και επικοινώνησε μαζί μας.">
+<link rel="icon" href="assets/logo.png">
+<style>
+  :root{
+    --bg:#000000;
+    --bg-soft:#0b0f14;
+    --card:#11161d;
+    --card-border:#1f2733;
+    --blue:#2f7dff;
+    --blue-2:#7fb2ff;
+    --text:#f2f5f9;
+    --muted:#9aa7b8;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:radial-gradient(circle at 50% 0%, #0d1420 0%, #000000 55%);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:32px 16px 64px;
+  }
+  .page{width:100%;max-width:480px;}
+  .avatar{
+    width:120px;height:120px;border-radius:50%;
+    margin:0 auto 18px;
+    display:block;
+    object-fit:cover;
+    border:2px solid var(--blue);
+    box-shadow:0 0 24px rgba(47,125,255,.35);
+  }
+  h1{
+    text-align:center;
+    font-size:1.5rem;
+    margin:0 0 4px;
+    letter-spacing:.5px;
+  }
+  h1 span{color:var(--blue-2);}
+  .tagline{
+    text-align:center;
+    color:var(--muted);
+    font-size:.95rem;
+    margin:0 0 28px;
+    letter-spacing:.5px;
+  }
+  .links{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:40px;
+  }
+  .link-btn{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    padding:14px 18px;
+    color:var(--text);
+    text-decoration:none;
+    font-size:1rem;
+    font-weight:600;
+    transition:transform .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .link-btn:active{transform:scale(.98);}
+  .link-btn:hover{
+    border-color:var(--blue);
+    background:#141b24;
+  }
+  .link-btn .icon{font-size:1.25rem;width:24px;text-align:center;}
+  .link-btn.primary{
+    background:linear-gradient(90deg,var(--blue),#1c4fb5);
+    border:none;
+  }
+
+  .section-title{
+    font-size:1.05rem;
+    font-weight:700;
+    margin:0 0 16px;
+    color:var(--blue-2);
+    text-transform:uppercase;
+    letter-spacing:1px;
+    text-align:center;
+  }
+
+  .portfolio{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-bottom:36px;
+  }
+  .work-card{
+    background:var(--card);
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    overflow:hidden;
+    text-decoration:none;
+    color:var(--text);
+    display:flex;
+    flex-direction:column;
+  }
+  .work-thumb{
+    aspect-ratio:1/1;
+    background:linear-gradient(135deg,#1c2b45,#0a1018);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.8rem;
+    color:var(--blue-2);
+  }
+  .work-info{padding:10px 12px 14px;}
+  .work-info .name{font-weight:600;font-size:.9rem;margin:0 0 2px;}
+  .work-info .type{color:var(--muted);font-size:.75rem;margin:0;}
+
+  footer{
+    text-align:center;
+    color:var(--muted);
+    font-size:.8rem;
+    margin-top:12px;
+  }
+  footer a{color:var(--blue-2);text-decoration:none;}
+
+  .edit-note{
+    background:#1a1300;
+    border:1px dashed #6b5200;
+    color:#f2d98a;
+    font-size:.75rem;
+    border-radius:10px;
+    padding:10px 14px;
+    margin-bottom:28px;
+    line-height:1.4;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <img class="avatar" src="assets/logo.png" alt="Greek Web Hub logo">
+    <h1>GREEK <span>WEB</span> HUB</h1>
+    <p class="tagline">Modern websites that work</p>
+
+    <div class="edit-note">
+      ✏️ Σημείωση: Άλλαξε τα links παρακάτω (TikTok, Instagram, WhatsApp, Portfolio) με τα δικά σου πραγματικά links μέσα στο <code>index.html</code>.
+    </div>
+
+    <div class="links">
+      <a class="link-btn primary" href="#portfolio">
+        <span class="icon">💼</span> Δες τις δουλειές μου
+      </a>
+      <a class="link-btn" href="https://www.tiktok.com/@yourusername" target="_blank" rel="noopener">
+        <span class="icon">🎵</span> TikTok
+      </a>
+      <a class="link-btn" href="https://www.instagram.com/yourusername" target="_blank" rel="noopener">
+        <span class="icon">📸</span> Instagram
+      </a>
+      <a class="link-btn" href="https://wa.me/30XXXXXXXXXX" target="_blank" rel="noopener">
+        <span class="icon">💬</span> WhatsApp
+      </a>
+      <a class="link-btn" href="mailto:info@greekwebhub.gr">
+        <span class="icon">✉️</span> Στείλε μου email
+      </a>
+    </div>
+
+    <h2 class="section-title" id="portfolio">Δουλειές μου</h2>
+    <div class="portfolio">
+      <a class="work-card" href="#" target="_blank" rel="noopener">
+        <div class="work-thumb">🖥️</div>
+        <div class="work-info">
+          <p class="name">Project 1</p>
+          <p class="type">Website</p>
+        </div>
+      </a>
+      <a class="work-card" href="#" target="_blank" rel="noopener">
+        <div class="work-thumb">🛍️</div>
+        <div class="work-info">
+          <p class="name">Project 2</p>
+          <p class="type">E-shop</p>
+        </div>
+      </a>
+      <a class="work-card" href="#" target="_blank" rel="noopener">
+        <div class="work-thumb">📱</div>
+        <div class="work-info">
+          <p class="name">Project 3</p>
+          <p class="type">Landing page</p>
+        </div>
+      </a>
+      <a class="work-card" href="#" target="_blank" rel="noopener">
+        <div class="work-thumb">🍽️</div>
+        <div class="work-info">
+          <p class="name">Project 4</p>
+          <p class="type">Website</p>
+        </div>
+      </a>
+    </div>
+
+    <footer>
+      &copy; <span id="year"></span> Greek Web Hub
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
