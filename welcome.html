@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greek Web Hub — Web Designs</title>
+<meta name="description" content="Greek Web Hub — Modern websites that work.">
+<link rel="icon" href="assets/logo.png">
+<style>
+  :root{
+    --blue:#2f7dff;
+    --blue-2:#7fb2ff;
+    --blue-3:#0f3a94;
+    --bg:#000000;
+    --text:#f2f5f9;
+    --muted:#9aa7b8;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;height:100%;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+  }
+
+  /* animated background blobs */
+  .blob{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.35;
+    z-index:0;
+    pointer-events:none;
+  }
+  .blob-1{
+    width:420px;height:420px;
+    background:var(--blue-3);
+    top:-120px; left:-140px;
+    animation:float1 14s ease-in-out infinite;
+  }
+  .blob-2{
+    width:360px;height:360px;
+    background:var(--blue);
+    bottom:-140px; right:-120px;
+    animation:float2 16s ease-in-out infinite;
+  }
+  @keyframes float1{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(60px,40px) scale(1.15);}
+  }
+  @keyframes float2{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(-50px,-30px) scale(1.1);}
+  }
+
+  .stage{
+    position:relative;
+    z-index:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    max-width:520px;
+  }
+
+  /* rotating gradient ring behind the logo */
+  .ring-wrap{
+    position:relative;
+    width:220px;height:220px;
+    margin-bottom:28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .ring{
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:conic-gradient(from 0deg, var(--blue), transparent 30%, var(--blue-2) 60%, transparent 90%, var(--blue));
+    animation:spin 6s linear infinite;
+    filter:drop-shadow(0 0 18px rgba(47,125,255,.55));
+  }
+  .ring::after{
+    content:"";
+    position:absolute;
+    inset:6px;
+    border-radius:50%;
+    background:var(--bg);
+  }
+  @keyframes spin{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+  }
+
+  .logo{
+    position:relative;
+    width:180px;height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    z-index:2;
+    opacity:0;
+    transform:scale(.85);
+    animation:pop-in 900ms ease-out 200ms forwards, pulse-glow 3.2s ease-in-out 1.2s infinite;
+  }
+  @keyframes pop-in{
+    to{opacity:1; transform:scale(1);}
+  }
+  @keyframes pulse-glow{
+    0%,100%{box-shadow:0 0 0 0 rgba(47,125,255,.0);}
+    50%{box-shadow:0 0 40px 6px rgba(47,125,255,.45);}
+  }
+
+  h1{
+    font-size:2.1rem;
+    letter-spacing:2px;
+    margin:0 0 8px;
+    display:flex;
+    gap:.5ch;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  h1 .word{
+    opacity:0;
+    transform:translateY(18px);
+    animation:word-in 700ms ease-out forwards;
+  }
+  h1 .word.accent{
+    background:linear-gradient(90deg,var(--blue),var(--blue-2));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  h1 .word:nth-child(1){animation-delay:1.05s;}
+  h1 .word:nth-child(2){animation-delay:1.25s;}
+  h1 .word:nth-child(3){animation-delay:1.45s;}
+  @keyframes word-in{
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  .subtitle{
+    color:var(--blue-2);
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:.85rem;
+    margin:0 0 14px;
+    opacity:0;
+    animation:fade-up 700ms ease-out 1.7s forwards;
+  }
+
+  .tagline{
+    color:var(--muted);
+    font-size:1rem;
+    margin:0 0 34px;
+    opacity:0;
+    animation:fade-up 700ms ease-out 1.9s forwards;
+  }
+  @keyframes fade-up{
+    from{opacity:0; transform:translateY(12px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  .cta{
+    opacity:0;
+    animation:fade-up 700ms ease-out 2.15s forwards;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 30px;
+    border-radius:999px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:600;
+    font-size:1rem;
+    background:linear-gradient(90deg,var(--blue-3),var(--blue));
+    background-size:200% 100%;
+    box-shadow:0 0 24px rgba(47,125,255,.35);
+    transition:transform .2s ease, background-position .6s ease;
+  }
+  .cta:hover{
+    transform:translateY(-2px) scale(1.03);
+    background-position:100% 0;
+  }
+
+  .scroll-hint{
+    margin-top:40px;
+    color:var(--muted);
+    font-size:.75rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    opacity:0;
+    animation:fade-up 700ms ease-out 2.4s forwards, bounce 2s ease-in-out 3.2s infinite;
+  }
+  @keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(6px);}
+  }
+</style>
+</head>
+<body>
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <div class="stage">
+    <div class="ring-wrap">
+      <div class="ring"></div>
+      <img class="logo" src="assets/logo.png" alt="Greek Web Hub logo">
+    </div>
+
+    <h1>
+      <span class="word">GREEK</span>
+      <span class="word accent">WEB</span>
+      <span class="word">HUB</span>
+    </h1>
+    <p class="subtitle">Web Designs</p>
+    <p class="tagline">Modern websites that work</p>
+
+    <a class="cta" href="index.html">Δες τις δουλειές μου →</a>
+    <p class="scroll-hint">Greek Web Hub</p>
+  </div>
+</body>
+</html>
