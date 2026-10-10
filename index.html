@@ -201,15 +201,7 @@
     position:relative;aspect-ratio:16/11;overflow:hidden;
     background:linear-gradient(135deg,#1c2b45,#0a1018);
   }
-  .screen .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3rem;}
-  .screen iframe{
-    position:absolute;top:0;left:0;border:0;
-    width:1280px;height:880px;
-    transform-origin:0 0;
-    pointer-events:none;background:#fff;
-    opacity:0;transition:opacity .5s ease;
-  }
-  .screen iframe.ready{opacity:1;}
+  .screen video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
   .sample-info{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px;}
   .sample-info .name{font-size:1.2rem;font-weight:700;margin:0;}
   .sample-info .type{color:var(--muted);font-size:.9rem;margin:2px 0 0;}
@@ -382,37 +374,37 @@
         <div class="sec-head reveal">
           <p class="eyebrow">Ζωντανά δείγματα</p>
           <h2>Δες τι φτιάχνουμε</h2>
-          <p>Πραγματικά sites πελατών μας. Κάνε σκρολ για να τα δεις να κυλάνε, ή πάτα σε όποιο θες για να το ανοίξεις.</p>
+          <p>Πραγματικά sites πελατών μας, όπως τα βλέπει ο επισκέπτης. Πάτα σε όποιο θες για να το ανοίξεις live.</p>
         </div>
         <div class="samples">
           <a class="sample reveal" href="https://georgechatzikandis-gif.github.io/avantis-restaurant-/" target="_blank" rel="noopener">
             <div class="browser"><i></i><i></i><i></i><span>Avantis Restaurant</span></div>
-            <div class="screen" data-src="https://georgechatzikandis-gif.github.io/avantis-restaurant-/"><div class="ph">🐟</div></div>
+            <div class="screen"><video src="assets/previews/avantis.mp4" poster="assets/previews/avantis.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div>
             <div class="sample-info"><div><p class="name">Avantis Restaurant</p><p class="type">Ψαροταβέρνα · Ρόδος</p></div><span class="arrow">↗</span></div>
           </a>
           <a class="sample reveal" href="https://balcony961.gr" target="_blank" rel="noopener">
             <div class="browser"><i></i><i></i><i></i><span>balcony961.gr</span></div>
-            <div class="screen" data-src="https://balcony961.gr"><div class="ph">🍸</div></div>
+            <div class="screen"><video src="assets/previews/balcony.mp4" poster="assets/previews/balcony.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div>
             <div class="sample-info"><div><p class="name">Balcony 961</p><p class="type">Cocktail Bar · Ρόδος</p></div><span class="arrow">↗</span></div>
           </a>
           <a class="sample reveal" href="https://georgechatzikandis-gif.github.io/bella-caza-/" target="_blank" rel="noopener">
             <div class="browser"><i></i><i></i><i></i><span>Bella Casa</span></div>
-            <div class="screen" data-src="https://georgechatzikandis-gif.github.io/bella-caza-/"><div class="ph">🏠</div></div>
+            <div class="screen"><video src="assets/previews/bella-casa.mp4" poster="assets/previews/bella-casa.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div>
             <div class="sample-info"><div><p class="name">Bella Casa</p><p class="type">Kitchens &amp; Interiors</p></div><span class="arrow">↗</span></div>
           </a>
           <a class="sample reveal" href="https://georgechatzikandis-gif.github.io/monolith-site-/" target="_blank" rel="noopener">
             <div class="browser"><i></i><i></i><i></i><span>Monolith Custom Homes</span></div>
-            <div class="screen" data-src="https://georgechatzikandis-gif.github.io/monolith-site-/"><div class="ph">🏗️</div></div>
+            <div class="screen"><video src="assets/previews/monolith.mp4" poster="assets/previews/monolith.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div>
             <div class="sample-info"><div><p class="name">Monolith Custom Homes</p><p class="type">Houston, TX</p></div><span class="arrow">↗</span></div>
           </a>
           <a class="sample reveal" href="https://georgechatzikandis-gif.github.io/loukoumades-/" target="_blank" rel="noopener">
             <div class="browser"><i></i><i></i><i></i><span>Λουκουμάδες Κρεμαστή</span></div>
-            <div class="screen" data-src="https://georgechatzikandis-gif.github.io/loukoumades-/"><div class="ph">🍩</div></div>
+            <div class="screen"><video src="assets/previews/loukoumades.mp4" poster="assets/previews/loukoumades.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div>
             <div class="sample-info"><div><p class="name">Λουκουμάδες Κρεμαστή</p><p class="type">Ζαχαροπλαστείο</p></div><span class="arrow">↗</span></div>
           </a>
           <a class="sample reveal" href="https://georgechatzikandis-gif.github.io/web-site-/" target="_blank" rel="noopener">
             <div class="browser"><i></i><i></i><i></i><span>Ματσής</span></div>
-            <div class="screen" data-src="https://georgechatzikandis-gif.github.io/web-site-/"><div class="ph">🥩</div></div>
+            <div class="screen"><video src="assets/previews/matsis.mp4" poster="assets/previews/matsis.jpg" muted loop playsinline preload="none" aria-hidden="true"></video></div>
             <div class="sample-info"><div><p class="name">Ματσής</p><p class="type">Κρέατα &amp; Αλλαντικά</p></div><span class="arrow">↗</span></div>
           </a>
         </div>
@@ -499,76 +491,15 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(function (el) { revealObs.observe(el); });
 
-    // Live samples: each card loads the real site in a scaled-down desktop-size frame,
-    // and the site inside scrolls along as the visitor scrolls this page.
-    var SITE_W = 1280;
-    var screens = Array.prototype.slice.call(document.querySelectorAll('.screen'));
-
-    function fit(screen) {
-      var f = screen.querySelector('iframe');
-      if (!f) return;
-      var scale = screen.clientWidth / SITE_W;
-      f.style.height = Math.ceil(screen.clientHeight / scale) + 'px';
-      f.style.transform = 'scale(' + scale + ')';
-    }
-
-    function hideScrollbar(f) {
-      try {
-        var s = f.contentDocument.createElement('style');
-        s.textContent = 'html{scrollbar-width:none}html::-webkit-scrollbar{display:none}';
-        f.contentDocument.head.appendChild(s);
-      } catch (err) { /* other domain */ }
-    }
-
-    var loadObs = new IntersectionObserver(function (entries) {
+    // Live samples: a screen recording of each site plays while its card is on screen.
+    var videoObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        var screen = e.target;
-        loadObs.unobserve(screen);
-        var f = document.createElement('iframe');
-        f.src = screen.dataset.src;
-        f.title = 'Προεπισκόπηση';
-        f.setAttribute('tabindex', '-1');
-        f.setAttribute('aria-hidden', 'true');
-        f.addEventListener('load', function () {
-          hideScrollbar(f);
-          f.classList.add('ready');
-          requestTick();
-        });
-        screen.appendChild(f);
-        fit(screen);
+        var v = e.target;
+        if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        else v.pause();
       });
-    }, { rootMargin: '500px 0px' });
-    screens.forEach(function (s) { loadObs.observe(s); });
-
-    function syncScroll() {
-      var vh = window.innerHeight;
-      screens.forEach(function (screen) {
-        var f = screen.querySelector('iframe.ready');
-        if (!f) return;
-        var r = screen.getBoundingClientRect();
-        if (r.bottom < 0 || r.top > vh) return;
-        // 0 when the card enters at the bottom of the screen, 1 when it leaves at the top
-        var p = Math.min(1, Math.max(0, (vh - r.top) / (vh + r.height)));
-        try {
-          // Works for the sites on the same domain (all the github.io ones)
-          var w = f.contentWindow, d = w.document.documentElement;
-          var max = Math.max(0, d.scrollHeight - w.innerHeight);
-          w.scrollTo(0, p * max);
-        } catch (err) {
-          // Sites on other domains can't be scrolled from here; they show their top part.
-        }
-      });
-    }
-
-    var ticking = false;
-    function requestTick() {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(function () { ticking = false; syncScroll(); });
-    }
-    window.addEventListener('scroll', requestTick, { passive: true });
-    window.addEventListener('resize', function () { screens.forEach(fit); requestTick(); });
+    }, { threshold: 0.25 });
+    document.querySelectorAll('.screen video').forEach(function (v) { videoObs.observe(v); });
   </script>
 </body>
 </html>
